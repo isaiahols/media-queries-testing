@@ -1,0 +1,146 @@
+/* this is a shortcut for some of a reset file */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+}
+
+header {
+  width: 100%;
+  height: 90px;
+  background: slategray;
+}
+
+header>section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  color: white;
+  margin: 0 auto;
+}
+
+.hamburger {
+  width: 60px;
+  height: 50px;
+  border: 1px rgba(255,255,255,0.5) solid;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bun {
+  width: 70%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bun > div {
+  width: 100%;
+  height: 20%;
+  background: rgba(255,255,255,0.5);
+}
+
+nav {
+  display: none;
+  justify-content: space-evenly;
+  width: 450px;
+}
+
+li {
+  list-style: none;
+  font-size: 20px;
+}
+
+.dropDown {
+  background: slategrey;
+  color: white;
+  height: 0;
+  overflow: hidden;
+  transition: 600ms height cubic-bezier(0.68,-0.55, 0.34, 1.59),  1200ms background ease-in-out;
+}
+
+.dropDownShow {
+  height: 150px;
+  background: lightblue;
+}
+
+.cubeToBall {
+  width: 100px;
+  height: 100px;
+  background: palevioletred;
+  animation-name: roll;
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-direction: alternate;
+  /* transform-origin: bottom right; */
+}
+
+.playing {
+  animation-play-state: running;
+}
+
+/* @keyframes roll {
+  from {
+    transform: translateX(0), rotate(0);
+    border-radius: 0px;
+    background: palevioletred;
+  } to {
+    transform: translateX(500px) rotate(1080deg);
+    border-radius: 50%;
+    background: #bada55;
+  }
+} */
+
+@keyframes roll {
+  0% {
+    transform: translateX(0), rotate(0);
+    border-radius: 0px;
+    background: palevioletred;
+  } 50% {
+    transform: translateX(500px) rotate(720deg);
+    border-radius: 50%;
+    background: #bada55;
+  } 100% {
+    transform: translatey(500px) translateX(500px);
+  }
+}
+
+@media (min-width: 576px) {
+  header>section{
+    width: 560px;
+  }
+}
+
+@media (min-width: 768px) {
+  header>section{
+    width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  header>section{
+    width: 960px;
+  }
+  
+  .hamburger {
+    display: none;
+  }
+  
+  nav {
+    display: flex;
+  }
+
+  .dropDownShow {
+    height: 0;
+  }
+}
